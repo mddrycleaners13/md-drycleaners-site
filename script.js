@@ -1,4 +1,4 @@
-// Final script for M.D. Dry Cleaners - connects to Google Apps Script, handles UI interactions
+// Final script for M.D. Dry Cleaners - centered logo version
 GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbz3OFTq6fBrwQHVZcUwztiB49NIaLAWTGR40pkvBS-tlPLFE29VdkJYLJ_FQ3xWpdHX/exec";
 
 const SERVICES = {
