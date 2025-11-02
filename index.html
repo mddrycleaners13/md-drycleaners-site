@@ -1,97 +1,66 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>M.D. Dry Cleaners — Expert Care for Your Finest Wear</title>
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>M.D. Dry Cleaners</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header centered">
-    <div class="brand-centered">
-      <img src="assets/logo.png" alt="M.D. Dry Cleaners" class="logo" id="logoImg">
-      <div class="brand-text centered-text">
-        <h1>M.D. Dry Cleaners</h1>
-        <p class="tag">Expert care for your finest wear.</p>
-      </div>
+<header>
+  <img src="assets/logo.png" alt="M.D. Dry Cleaners Logo" class="logo">
+  <h1>M.D. Dry Cleaners</h1>
+  <p class="tagline">Expert care for your finest wear.</p>
+</header>
+
+<main>
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul id="serviceList">
+      <li>Shirt – ₹80</li>
+      <li>Trousers – ₹100</li>
+      <li>Suit – ₹250</li>
+      <li>Kurta – ₹120</li>
+      <li>Saree – ₹180</li>
+    </ul>
+  </section>
+
+  <section id="pickup">
+    <h2>Schedule Pickup</h2>
+    <form id="pickupForm">
+      <label>Name:</label><input type="text" name="name" required><br>
+      <label>Phone:</label><input type="text" name="phone" required><br>
+      <label>Address:</label><input type="text" name="address" required><br>
+      <label>Date:</label><input type="date" name="date" required><br>
+      <label>Time:</label><input type="time" name="time" min="10:00" max="20:00" required><br>
+      <button type="submit" id="submitBtn">Submit</button>
+      <button type="reset">Clear</button>
+    </form>
+    <div id="loading" class="hidden">Submitting...</div>
+    <div id="successMessage" class="hidden">✅ Thank you! Your pickup has been scheduled.</div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <button id="contactPopupBtn">Contact Form</button>
+    <div id="contactPopup" class="popup hidden">
+      <form id="contactForm">
+        <label>Name:</label><input type="text" name="name" required><br>
+        <label>Phone:</label><input type="text" name="phone" required><br>
+        <label>Message:</label><textarea name="message" required></textarea><br>
+        <button type="submit">Send</button>
+        <button type="button" id="closePopup">Close</button>
+      </form>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="container">
-    <section class="hero" id="home">
-      <h2>M.D. Dry Cleaners</h2>
-      <p id="tagline">Providing premium dry cleaning and laundry services with doorstep pickup and delivery.</p>
-      <div class="cta">
-        <button id="pickupBtn" class="btn primary">Pickup Service</button>
-        <button id="contactBtn" class="btn outline">Contact Us</button>
-      </div>
-    </section>
+<footer>
+  <a href="https://www.google.com/maps/place/M.D.+Drycleaners/@28.5780651,77.2093911,21z" target="_blank">📍 Find us on Maps</a>
+  <a href="https://wa.me/919821266799" target="_blank" class="whatsapp">💬 Chat on WhatsApp</a>
+</footer>
 
-    <div class="layout-grid">
-      <section class="services" id="services">
-        <h3>Our Services</h3>
-        <div id="serviceGrids"></div>
-      </section>
-
-      <aside class="order" id="pickup">
-        <h3>Schedule Pickup</h3>
-        <div id="summary" class="summary-empty">No items selected</div>
-        <div class="total">Total: <span id="total">₹0</span></div>
-
-        <form id="pickupForm" autocomplete="off">
-          <label>Full name <input type="text" id="name" required></label>
-          <label>Phone <input type="tel" id="phone" required placeholder="10-digit mobile number"></label>
-          <label>Address <textarea id="address" required></textarea></label>
-          <label>Pickup date <input type="date" id="date" required></label>
-          <label>Pickup slot <select id="slot" required><option value="">Select slot</option></select></label>
-          <label>Notes (optional) <input id="notes"></label>
-
-          <div class="form-actions">
-            <button type="submit" id="submitBtn" class="btn primary">Schedule Pickup</button>
-            <button type="button" id="clearBtn" class="btn outline">Clear</button>
-          </div>
-        </form>
-        <div id="loading" class="loading" aria-hidden="true"><div class="spinner"></div> Sending...</div>
-      </aside>
-    </div>
-
-    <section id="contactUs" class="contact-section">
-      <div class="contact-card">
-        <h3>Contact Us</h3>
-        <p><strong>Phone:</strong> <a href="tel:+919821266799">9821266799</a>, <a href="tel:+919811993799">9811993799</a></p>
-        <p><strong>Address:</strong> Shop No. 13, Laxmi Bai Nagar Market, New Delhi - 110023</p>
-        <p><a id="maps" href="#" target="_blank">View on Google Maps</a></p>
-        <p><a id="waChat" class="wa-link" href="#" target="_blank">Chat on WhatsApp</a></p>
-      </div>
-
-      <div class="share-card">
-        <h4>Share this site</h4>
-        <p class="small">Copy or share the booking page link</p>
-        <button id="shareBtn" class="btn outline">Share site</button>
-      </div>
-    </section>
-
-    <div id="confirmPopup" class="popup" role="dialog" aria-hidden="true">
-      <div class="popup-inner">
-        <div class="check">✓</div>
-        <div class="popup-text">
-          <h4>Thank you!</h4>
-          <p>Your pickup request has been received. We’ll contact you shortly.</p>
-        </div>
-        <button id="closePopup" class="btn outline">Close</button>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div>© 2025 M.D. Dry Cleaners · Shop No. 13, Laxmi Bai Nagar Market</div>
-      <div class="footer-contacts">Call: <a href="tel:+919821266799">9821266799</a> · <a href="tel:+919811993799">9811993799</a></div>
-    </footer>
-
-    <button id="callBtn" class="call-btn" title="Call Now">📞</button>
-    <button id="waBtn" class="wa-btn left" title="Chat on WhatsApp">💬</button>
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
