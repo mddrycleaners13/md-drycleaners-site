@@ -13,7 +13,7 @@
 .primary{background:var(--royal);color:#fff;border-color:var(--green)}.primary:hover{background:var(--green);border-color:transparent}
 .outline{background:#fff;border:2px solid #eef6ff;color:var(--royal)}
 .services{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,24,72,0.04)}
-.service-grids{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px}
+.service-grids{display:grid;grid-template-columns:repeat( auto-fit, minmax(220px, 1fr) );gap:12px;margin-top:12px}
 .service-section{margin-bottom:14px}
 .service-section h4{margin:0 0 8px 0;color:var(--royal)}
 .service-card{padding:12px;border-radius:10px;border:1px solid #eef6ff;display:flex;justify-content:space-between;align-items:center;gap:8px}

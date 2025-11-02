@@ -1,1 +1,1 @@
-M.D. Dry Cleaners - Final Polished Website\nFiles: index.html, styles.css, script.js, assets/logo.png, assets/favicon.png\nDeploy to Netlify by uploading repo or drag & drop.
+Final v3 package. Deploy to GitHub/Netlify.
